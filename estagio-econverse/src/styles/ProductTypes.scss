@@ -1,0 +1,102 @@
+@import "./main.scss"; // Importa o arquivo SCSS principal
+
+.topics {
+  display: flex; // Flexbox para layout flexível
+  justify-content: center; // Centraliza itens horizontalmente
+  flex-wrap: wrap; // Permite que os itens se movam para a linha seguinte se não houver espaço suficiente
+  margin: 30px 10px; // Margem geral em torno da seção 
+
+  &__container {
+    display: flex; // Flexbox para layout interno
+    flex-direction: column; // Alinha os itens na vertical
+    align-items: center; // Centraliza itens horizontalmente no container
+    margin-right: 40px; // Margem direita
+    margin-left: 30px; // Margem esquerda
+    flex-basis: 100px; // Define a base do item para flexível, mas com valor inicial
+    transition: transform 0.3s ease-in-out; // Transição suave para transformações
+
+    &:hover {
+      transform: scale(1.05); // Aplica um pequeno efeito de zoom
+    }
+
+    @media (max-width: 768px) {
+      flex-basis: 80px; // Reduz a base do item em telas menores
+    }
+
+    @media (max-width: 480px) {
+      flex-basis: 70px; // Reduz ainda mais a base do item em telas muito pequenas
+    }
+  }
+
+  &__item {
+    display: flex; // Flexbox para layout interno do item
+    justify-content: center; // Centraliza o conteúdo horizontalmente
+    align-items: center; // Centraliza o conteúdo verticalmente
+    width: 100px; // Largura do item
+    height: 100px; // Altura do item
+    padding: 10px; // Espaçamento interno
+    border-radius: 10px; // Bordas arredondadas
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); // Sombra sutil ao redor do item
+    background-color: $wrap; // Cor de fundo do item
+    transition: all 0.3s ease-in-out; // Transição suave para todas as propriedades
+
+    &:hover {
+      background-color: lighten($wrap, 10%); // Clareia a cor de fundo ao passar o mouse
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); // Aumenta a sombra ao passar o mouse
+    }
+
+    @media (max-width: 768px) {
+      width: 80px; // Reduz a largura em telas menores
+      height: 80px; // Reduz a altura em telas menores
+    }
+
+    @media (max-width: 480px) {
+      width: 70px; ///Reduz ainda mais a largura em telas muito pequenas
+      height: 70px; // Reduz ainda mais a altura em telas muito pequenas
+    }
+  }
+
+  &__image-wrapper {
+    width: 50px; // Largura do wrapper da imagem //
+    height: 50px; // Altura do wrapper da imagem
+    overflow: hidden; // Oculta partes da imagem que saem do container
+
+    @media (max-width: 768px) {
+      width: 40px; // Reduz a largura do wrapper em telas menores
+      height: 40px; // Reduz a altura do wrapper em telas menores
+    }
+
+    @media (max-width: 480px) {
+      width: 35px; // Reduz ainda mais a largura do wrapper em telas muito pequenas
+      height: 35px; // Reduz ainda mais a altura do wrapper em telas muito pequenas
+    }
+  }
+
+
+  &__image {
+    width: 100%; // A largura da imagem ocupa 100% do wrapper
+    height: 100%; // A altura da imagem ocupa 100% do wrapper
+    object-fit: cover; // Cobre o wrapper mantendo a proporção da imagem
+  }
+
+  &__label {
+    margin-top: 15px; // Margem acima do rótulo
+    font-size: 16px; ///Tamanho da fonte do rótulo
+    color: $text1; // Cor do texto
+    font-weight: 500; // Peso da fonte
+    text-align: center; // Centraliza o texto horizontalmente
+    white-space: nowrap; // Impede a quebra de linha no texto 
+
+    &--active {
+      color: $red; // Cor vermelha destacada para o rótulo ativo
+    }
+
+    @media (max-width: 768px) {
+      font-size: 12px; // Reduz o tamanho da fonte em telas menores
+    }
+
+    @media (max-width: 480px) {
+      font-size: 11px; // Reduz ainda mais o tamanho da fonte em telas muito pequenas
+    }
+  }
+}

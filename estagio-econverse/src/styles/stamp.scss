@@ -1,0 +1,78 @@
+@import './main.scss'; // Importa o arquivo SCSS principal
+
+.stamp-section {
+  text-align: center; // Centraliza o texto dentro da seção
+  margin: 40px auto; // Margem superior e inferior de 40px, centraliza horizontalmente
+
+  .stamp-title {
+    font-size: 30px; // Tamanho da fonte do título
+    color: $red; // Cor do título
+    margin-bottom: 20px; // Margem abaixo do título
+    font-weight: 700; // Peso da fonte em negrito
+  }
+
+  .carousel-container {
+    position: relative; // Permite o posicionamento absoluto dos botões dentro deste container
+    display: flex; // Flexbox para layout dos itens do carrossel
+    align-items: center; // Alinha itens verticalmente ao centro
+    justify-content: center; // Centraliza itens horizontalmente
+    overflow: hidden; // Esconde qualquer item fora da área visível
+  }
+
+  .carousel-button {
+    background: none; // Remove o fundo padrão do botão
+    border: none; // Remove a borda padrão do botão
+    position: absolute; // Posiciona o botão de forma absoluta dentro do container
+    top: 50%; // Posiciona o botão verticalmente no centro
+    transform: translateY(-50%); // Ajusta o botão para centralizar verticalmente
+    cursor: pointer; // Cursor pointer para indicar interatividade
+    z-index: 2; // Garante que os botões fiquem acima dos outros elementos
+    width: 45px; // Largura dos botões
+    height: 30px; // Altura dos botões
+
+    img {
+      width: 100%; // Largura total do botão
+      height: 100%; // Altura total do botão
+    }
+
+    &.left {
+      left: 20px; // Distância da borda esquerda
+    }
+
+    &.right {
+      right: 20px; // Distância da borda direita
+    }
+  }
+
+  .stamp-container {
+    width: calc(100% - 120px); // Largura ajustada para considerar o espaço ocupado pelas setas de navegação
+    overflow: hidden; // Esconde itens fora da área visível
+  }
+
+  .carousel {
+    display: flex; // Flexbox para disposição horizontal dos itens
+    transition: transform 0.5s ease-in-out; // Suaviza a rolagem entre os itens do carrossel
+  }
+
+  .stamp-item {
+    flex: 0 0 220px; // Largura fixa dos itens para garantir que sejam inteiros (não encolhem nem se esticam)
+    height: 220px; // Altura fixa dos itens
+    border-radius: 50%; // Bordas arredondadas para criar um formato circular
+    background-color: #fff; // Cor de fundo branca
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave ao redor do item
+    display: flex; // Flexbox para centralizar o conteúdo interno
+    justify-content: center; // Centraliza horizontalmente o conteúdo
+    align-items: center; // Centraliza verticalmente o conteúdo
+    margin-right: 40px; // Espaçamento entre os itens
+    transition: transform 0.3s ease; // Suaviza o efeito de transformação
+
+    img {
+      width: 90%; // Largura da imagem (90% da largura do item)
+      height: auto; // Altura automática para manter a proporção
+    }
+    
+    &:hover {
+      transform: scale(1.2); // Aumenta o tamanho do item ao passar o mouse
+    }
+  }
+}

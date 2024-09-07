@@ -1,0 +1,144 @@
+@import './main.scss';
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background: $white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 800px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.modal-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .product-image {
+    width: 40%;
+    height: 40%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .product-details {
+    width: 50%;
+    padding-left: 40px;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: $text5;
+  }
+
+  .description {
+    font-size: 14px;
+    color: $text6;
+    margin-bottom: 10px;
+  }
+
+  .see-more {
+    color: $text5;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .price {
+    font-size: 28px;
+    color: $text5;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .qty-selector {
+    display: flex;
+    align-items: stretch; // Isso garante que todos os elementos tenham a mesma altura
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    border: 1px solid $text5;
+    border-radius: 4px;
+    overflow: hidden;
+    width: fit-content; // Isso faz com que o container se ajuste ao conteúdo
+
+    button {
+      background-color: $white;
+      border: none;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: none;
+
+      &:hover {
+        background-color: $gray;
+      }
+    }
+
+    input {
+      width: 50px;
+      height: 30px;
+      text-align: center;
+      border: none;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+  }
+
+  .buy-button {
+    background-color: $red;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+
+    &:hover {
+      background-color: darken($red, 10%);
+    }
+  }
+}

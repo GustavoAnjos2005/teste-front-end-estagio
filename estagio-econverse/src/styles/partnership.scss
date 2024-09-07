@@ -1,0 +1,106 @@
+@import './main.scss'; // Importa o arquivo SCSS principal
+
+.partnership-section {
+  text-align: center; // Centraliza o texto dentro da seção
+  max-width: 1200px; // Define a largura máxima da seção
+  margin: 40px auto; // Margem superior e inferior de 40px, centraliza horizontalmente
+
+  .partnership-title {
+    font-size: 30px; // Tamanho da fonte do título
+    font-weight: bold; // Fonte em negrito
+    color: $red; // Cor do título
+    margin-bottom: 20px; // Margem abaixo do título
+    gap: 20px; // Espaçamento entre elementos (não aplicável diretamente aqui, mas pode ser útil se a classe for usada com flex ou grid)
+  }
+
+  .see-all {
+    font-size: 15px; // Tamanho da fonte
+    color: $text2; // Cor do texto
+    cursor: pointer; // Cursor pointer para indicar interatividade
+    margin-bottom: 20px; // Margem abaixo do link
+    font-weight: 700; // Fonte em negrito
+  }
+
+  .partnership-container,
+  .product-container {
+    display: flex; // Flexbox para layout horizontal
+    justify-content: space-between; // Espaça os itens igualmente entre o início e o fim do contêiner
+    gap: 70px; // Espaçamento entre os itens (aumentado de 30px para adicionar mais espaço)
+    margin-bottom: 40px; // Margem abaixo dos contêineres (aumentada de 30px para adicionar mais espaço vertical)
+  }
+
+  .product-container {
+    height: 284px; // Altura fixa para o contêiner de produtos
+  }
+
+  .partnership-container {
+    height: 350px; // Altura fixa para o contêiner de parcerias
+  }
+
+  .partnership-item,
+  .product-item {
+    position: relative; // Posicionamento relativo para permitir a sobreposição de elementos
+    width: calc(50% - 50px); // Largura ajustada para considerar o aumento do espaçamento (50% da largura menos 50px)
+    border-radius: 10px; // Bordas arredondadas
+    overflow: hidden; // Oculta qualquer conteúdo que exceda os limites do item
+    padding: 0; // Remove o espaçamento interno
+    margin: 0; // Remove a margem externa
+    border: none; // Remove a borda padrão
+    box-sizing: border-box; // Inclui a borda e o padding no cálculo da largura e altura
+  }
+
+  .image {
+    width: 100%; // Largura total do item
+    height: 100%; // Altura total do item
+    object-fit: cover; // Ajusta a imagem para cobrir o item mantendo a proporção
+    display: block; // Remove qualquer espaçamento adicional abaixo da imagem
+    padding: 0; // Remove o padding
+    margin: 0; // Remove a margem
+    border: none; // Remove a borda
+    box-sizing: border-box; // Inclui a borda e o padding no cálculo da largura e altura
+  }
+
+  .overlay {
+    position: absolute; // Posiciona a sobreposição sobre o item
+    top: 0; // Alinha ao topo do item
+    left: 0; // Alinha à esquerda do item
+    width: 100%; // Largura total do item
+    height: 100%; // Altura total do item
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)); // Gradiente de fundo
+    color: $white; // Cor do texto
+    display: flex; // Flexbox para layout da sobreposição
+    flex-direction: column; // Alinha os elementos na vertical
+    justify-content: flex-start; // Alinha os itens no início do contêiner (mudado de flex-end para mover o conteúdo para cima)
+    align-items: flex-start; // Alinha os itens à esquerda
+    padding: 20px; // Espaçamento interno
+
+    h3 {
+      font-size: 40px; // Tamanho da fonte do título
+      margin-bottom: 10px; // Margem abaixo do título
+      margin-top: 70px; // Margem superior adicionada para afastar o título do topo
+      margin-left: 20px; // Margem esquerda
+    }
+
+    p {
+      font-size: 16px; // Tamanho da fonte
+      margin-bottom: 20px; // Margem abaixo do texto
+      margin-left: 20px; // Margem esquerda
+      text-align: left; // Alinha o texto à esquerda
+    }
+
+    .btn-check {
+      background-color: $red; // Cor de fundo do botão
+      border: none; // Remove a borda padrão
+      color: $white; // Cor do texto
+      padding: 10px 25px; // Espaçamento interno
+      border-radius: 5px; // Bordas arredondadas
+      font-weight: bold; // Fonte em negrito
+      cursor: pointer; // Cursor pointer para indicar interatividade
+      margin-left: 20px; // Margem esquerda
+
+      &:hover {
+        background-color: #f76492; // Escurece a cor de fundo no hover
+      }
+    }
+  }
+}

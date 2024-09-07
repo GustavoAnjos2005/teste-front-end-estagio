@@ -1,0 +1,162 @@
+@import './main.scss'; // Importa o arquivo SCSS principal
+
+.header {
+   background-color: $white; // Define o fundo do como branco
+   padding: 0px 20px; // Adiciona um espaçamento nas laterais
+ 
+   &__top-bar {
+     display: flex; // Define o layout como flexível para os itens
+     justify-content: space-between; // Distribui os itens igualmente entre os espaços
+     font-size: 12px; // Define o tamanho da fonte
+     background-color: $white; // Fundo branco
+     padding: 5px 0px; // Espaçamento vertical
+     margin-bottom: 12px; // Margem inferior para separar do conteúdo abaixo
+     padding-left: 300px; // Adiciona espaço à esquerda
+
+     @media (max-width: 1024px) {
+      padding-left: 150px; // Ajuste do padding em telas menores
+    }
+
+    @media (max-width: 768px) {
+      padding-left: 20px; // Ajuste do padding para telas pequenas
+      padding-right: 20px;
+    }
+   }
+ 
+   .header__top-links {
+     display: flex; // Itens em linha
+     justify-content: space-between; // Espaçamento uniforme entre links
+     width: 75%; // Links ocupam 75% da largura disponível
+     
+     a {
+       color: $gray; // Cor do texto dos links
+       text-decoration: none; // Remove o sublinhado dos links
+       font-size: 12px; // Tamanho da fonte
+       display: flex; // Os links são exibidos em linha
+       align-items: center; // Alinhamento vertical
+       gap: 5px; // Espaço entre a imagem e o texto do link
+       
+       .highlight {
+         color: $red; // Cor vermelha para destaque
+         font-weight: bold; // Texto em negrito
+       }
+ 
+       img {
+         margin-right: 5px; // Espaçamento entre a imagem e o texto do link
+       }
+     }
+   }
+ 
+   &__main {
+     display: flex; // Exibe os elementos principais em linha
+     justify-content: space-between; // Espaça os elementos
+     align-items: center; // Alinha os elementos verticalmente ao centro
+ 
+     .header__logo img {
+       height: 51px; // Altura do logo
+       width: 139px; // Largura do logo
+       margin-right: 48px; // Espaço à direita do logo
+       margin-left: 51px; // Espaço à esquerda do logo
+
+       @media (max-width: 768px) {
+         margin-right: 20px; // Ajuste de margem para dispositivos menores
+         margin-left: 20px;
+       }
+     }
+ 
+     .header__search {
+       flex: 0.9; // A barra de pesquisa ocupa 90% do espaço restante
+       margin: 0px 20px; // Margem ao redor da barra de pesquisa
+       display: flex; // Alinha a barra de pesquisa e o botão de busca em linha
+ 
+       input {
+         flex: 1; // O campo de input ocupa todo o espaço disponível
+         padding: 10px; // Adiciona espaçamento interno
+         border: none; // Remove a borda padrão
+         background-color: $bar; // Cor de fundo do campo de pesquisa
+         border-radius: 5px 0 0 5px; // Bordas arredondadas no lado esquerdo
+         font-size: 14px; // Tamanho da fonte no campo de pesquisa
+       }
+ 
+       button {
+         background-color: $bar; // Cor de fundo do botão de busca
+         border: none; // Remove a borda padrão do botão
+         border-radius: 0 5px 5px 0; // Bordas arredondadas no lado direito
+         padding: 10px; // Espaçamento interno do botão
+         cursor: pointer; // Muda o cursor para indicar que o botão é clicável
+ 
+         img {
+           width: 28px; // Largura da imagem do ícone de busca
+           height: 28px; // Altura da imagem do ícone de busca
+         }
+       }
+     }
+ 
+     .header__icons {
+       display: flex; // Exibe os ícones em linha
+       gap: 40px; // Espaçamento entre os ícones
+ 
+       img {
+         width: 32px; // Define a largura dos ícones
+         height: 32px; // Define a altura dos ícones
+       }
+     }
+   }
+
+   .header__icons img:first-child {
+      width: 24px; // Define a largura do primeiro ícone
+      height: 24px; // Define a altura do primeiro ícone
+      margin-left: 20px; // Espaço à esquerda do primeiro ícone
+      margin-top: 3px; // Espaço no topo do primeiro ícone
+    }
+ 
+   &__nav {
+     background-color: $white; // Define o fundo do menu de navegação
+     padding: 10px 20px; // Espaçamento interno do menu
+ 
+     ul {
+       display: flex; // Exibe as opções do menu em linha
+       gap: 20px; // Espaço entre os itens do menu
+       list-style: none; // Remove a bolinha de lista padrão
+       padding: 0; // Remove o padding padrão
+       margin: 0; // Remove a margem padrão
+ 
+       li {
+        a {
+          color: $gray; // Cor dos links do menu
+          text-decoration: none; // Remove o sublinhado dos links
+          font-size: 14px; // Tamanho da fonte dos links
+          font-weight: bold; // Negrito para os links
+          margin: 30px; // Margem ao redor dos links
+          transition: color 0.3s ease; // Transição suave ao mudar de cor
+  
+          &:hover {
+            color: $red; // Muda para cor vermelha ao passar o mouse
+          }
+  
+          img {
+            margin-right: 12px; // Espaçamento entre a imagem e o texto
+            vertical-align: middle; // Alinha a imagem verticalmente ao centro
+            margin-bottom: 3px; // Espaço inferior à imagem
+          }
+        }
+      }
+    }
+   }
+ }
+ 
+ @media (max-width: 768px) {
+   .header__main {
+     flex-direction: column; // Alinha os elementos principais verticalmente em telas pequenas
+ 
+     .header__search {
+       margin: 10px 0; // Margem reduzida para o campo de pesquisa em telas menores
+       flex: 1; // Barra de pesquisa ocupa mais espaço no layout
+     }
+   }
+ 
+   .header__nav ul {
+     flex-direction: column; // Alinha as opções do menu verticalmente em telas pequenas
+     align-items: center; // Centraliza os itens do menu
+   }
+ }

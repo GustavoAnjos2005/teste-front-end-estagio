@@ -1,0 +1,95 @@
+@import './main.scss'; // Importa o arquivo SCSS principal
+
+.banner {
+  background-image: url("../assets/2-FundoOferta.png"); // Define a imagem de fundo do banner
+  background-size: cover; // Garante que a imagem de fundo cubra toda a área
+  background-position: center; // Centraliza a imagem de fundo
+  padding: 60px 20px; // Define o espaçamento interno do banner
+  text-align: left; // Alinha o texto à esquerda
+  height: 348px; // Altura fixa para o banner
+  position: relative; // Define a posição relativa para controle do conteúdo
+  display: flex; // Usa o flexbox para alinhar os itens dentro do banner
+  align-items: center; // Centraliza verticalmente o conteúdo do banner
+  
+  &::before {
+    content: ''; // Aplica a sobreposição de gradiente
+    position: absolute; // Posiciona o container
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.7) 80%); 
+    // Gradiente para escurecer o fundo
+    z-index: 1; // Coloca o gradiente atrás do conteúdo principal
+  }
+
+  &__content {
+    position: relative; // Define a posição relativa para manter o conteúdo acima do gradiente
+    z-index: 2; // Garante que o conteúdo apareça acima
+    margin-left: 5%; // Margem esquerda para posicionar o conteúdo
+  }
+
+  &__title {
+    font-size: 3rem; // Tamanho da fonte do título principal
+    margin-bottom: 10px; // Espaçamento inferior para separar do subtítulo
+    color: $white; // Cor branca para o título
+    font-weight: 600; // Negrito para o título
+    text-align: start; // Alinhamento do título à esquerda
+
+    @media (max-width: 1024px) {
+      font-size: 2.5rem; // Reduz o tamanho da fonte em telas menores
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem; // Reduz ainda mais o tamanho da fonte em telas bem pequenas
+    }
+  }
+
+  &__subtitle {
+    font-size: 30px; // Tamanho da fonte para o subtítulo
+    margin-bottom: 20px; // Espaço inferior para separar do botão
+    font-weight: 600; // Texto em negrito
+    color: $white; // Cor branca para o subtítulo
+
+    @media (max-width: 1024px) {
+      font-size: 25px; // Ajusta o tamanho do subtítulo em telas menores
+    }
+
+    @media (max-width: 768px) {
+      font-size: 20px; // Reduz o tamanho do subtítulo em telas pequenas
+    }
+  }
+
+  &__button {
+    padding: 10px 45px; // Espaçamento interno do botão
+    background-color: $red; // Cor de fundo vermelha
+    color: $white; // Cor do texto em branco
+    text-decoration: none; // Remove a sublinha do link
+    border-radius: 5px; // Bordas arredondadas para o botão
+    font-weight: bold; // Texto em negrito
+    transition: background-color 0.3s; // Animação de transição suave ao passar o mouse
+    text-align: center; // Centraliza o texto dentro do botão
+    display: inline-block; // Faz o botão ocupar o espaço necessário sem esticar
+    width: auto; // Ajusta a largura automaticamente de acordo com o conteúdo
+
+    &:hover {
+      background-color: darken($red, 10%); // Escurece a cor de fundo ao passar o mouse
+    }
+
+    @media (max-width: 768px) {
+      padding: 8px 30px; // Reduz o espaçamento interno do botão em telas pequenas
+    }
+  }
+
+  @media (max-width: 1024px) {
+    height: 300px; // Reduz a altura do banner em telas médias
+    padding: 50px 15px; // Ajusta o espaçamento interno em telas médias
+  }
+
+  @media (max-width: 768px) {
+    height: 250px; // Reduz ainda mais a altura em telas pequenas
+    padding: 40px 10px; // Ajusta o espaçamento interno em telas pequenas
+    text-align: center; // Alinha o texto ao centro em telas pequenas
+    flex-direction: column; // Empilha os elementos verticalmente em telas pequenas
+  }
+}
