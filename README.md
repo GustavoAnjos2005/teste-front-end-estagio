@@ -1,31 +1,64 @@
 # Teste Econverse: Vaga Desenvolvedor Front-End Jr
 
-### Vem ser #Econverse!
+Este projeto foi criado utilizando o [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) e [Sass](https://sass-lang.com/). O objetivo é fornecer uma base para construir aplicações React com um ambiente de desenvolvimento rápido e simples, utilizando a tipagem do TypeScript e o poder do Sass para estilização.
 
-Segue abaixo as instruções para a execução do teste.
+## Pré-Requisitos
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail ana.nascimento@econverse.com.br, joao.victor@econverse.com.br e eduardo.rodrigues@econverse.com.br com o título **Teste Vaga FrontEnd Jr**
+Antes de começar, certifique-se de ter instalado em sua máquina:
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+- [Node.js](https://nodejs.org/) (versão 14 ou superior)
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+## Clonar o repositório
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+Clone este repositório em sua máquina local usando o seguinte comando:
 
-**Boa sorte! ;)**
+```bash
+git clone https://github.com/GustavoAnjos2005/teste-front-end-estagio
+
+```
+### Navegue até o diretório do projeto:
+
+```bash
+cd SEU_REPOSITORIO
+```
+### Instale as dependências do projeto usando o npm ou yarn:
+
+```bash
+npm install
+```
+```bash
+npm yarm
+```
+
+## Rodar em Ambiente de Desenvolvimento
+Para iniciar o servidor de desenvolvimento, execute:
+
+```bash
+npm run dev
+```
+ou
+```bash
+yarn dev
+```
+
+## Compilar para Produção
+Para compilar este projeto para um ambiente de produção, execute o seguinte comando:
+```bash
+npm run build
+```
+ou
+```bash
+yarn build
+```
+## Rodar a versão Compilada
+Depois de compilar o projeto, você pode testar a versão de produção localmente. Para isso, use o seguinte comando:
+```bash
+npm run preview
+```
+ou
+```bash
+yarn preview
+```
+
+Isso é tudo que necessita para rodar e fazer testes no projeto, um grande abraço à todos :)
