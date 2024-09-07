@@ -1,0 +1,182 @@
+@import './main.scss'; // Importa o arquivo SCSS principal
+
+.footer {
+  background-color: $footer; // Cor de fundo do rodapé
+  color: $white; // Cor do texto no rodapé
+  padding: 40px 20px 20px; // Espaçamento interno do rodapé (topo, laterais e fundo)
+
+  &__container {
+    display: flex; // Usa Flexbox para layout dos itens
+    justify-content: space-between; // Espaça os itens igualmente
+    margin-bottom: 30px; // Espaçamento inferior
+    margin-top: 60px; // Espaçamento superior
+    margin-left: 30px; // Espaçamento à esquerda
+    flex-wrap: wrap; // Permite que os itens se movam para a linha seguinte em telas menores
+    gap: 20px; // Espaçamento entre os itens
+  }
+
+  &__section {
+    flex: 1; // Permite que a seção cresça para preencher o espaço disponível
+    min-width: 200px; // Largura mínima para a seção
+    margin-bottom: 20px; // Espaçamento inferior
+
+    h4 {
+      font-size: 13px; // Tamanho da fonte do título
+      margin-bottom: 15px; // Espaçamento inferior do título
+      font-weight: 700; // Peso da fonte em negrito
+    }
+
+    ul {
+      list-style: none; // Remove os marcadores das listas
+      padding: 0; // Remove o padding padrão
+
+      li {
+        margin-bottom: 10px; // Espaçamento inferior dos itens da lista
+      }
+
+      a {
+        color: $white; // Cor do texto do link
+        text-decoration: none; // Remove o sublinhado do link
+        font-size: 12px; // Tamanho da fonte do link
+        font-weight: 300; // Peso da fonte
+        line-height: 32px; // Altura da linha para espaçamento vertical
+        &:hover {
+          text-decoration: underline; // Adiciona sublinhado ao passar o mouse
+        }
+      }
+    }
+  }
+
+  &__newsletter {
+    flex: 1.5; // Tamanho maior em relação às outras seções
+    min-width: 300px; // Largura mínima
+    background-color: $white; // Cor de fundo branca
+    color: $footer; // Cor do texto
+    padding: 30px 25px; // Espaçamento interno (topo, laterais e fundo)
+    border-radius: 10px; // Bordas arredondadas
+    text-align: center; // Centraliza o texto
+    flex-direction: column; // Alinha os itens na coluna
+    justify-content: center; // Centraliza os itens verticalmente
+    display: flex; // Usa Flexbox para layout
+
+    .title-1 {
+      font-size: 18px; // Tamanho da fonte
+      color: $text2; // Cor do texto
+      text-align: left; // Alinha o texto à esquerda
+      margin-bottom: 0px; // Remove o espaçamento inferior
+    }
+
+    .title-1, .title-2 {
+      line-height: 0.4; // Garante que não haja espaçamento extra entre as linhas
+    }
+
+    .title-2 {
+      font-size: 21px; // Tamanho da fonte
+      font-weight: bold; // Peso da fonte em negrito
+      color: $text2; // Cor do texto
+      margin-top: 0; // Remove o espaçamento superior
+      margin-bottom: 20px; // Espaçamento inferior
+      text-align: left; // Alinha o texto à esquerda
+    }
+    
+    p {
+      font-size: 14px; // Tamanho da fonte
+      margin-top: 10px; // Espaçamento superior
+      margin-bottom: 50px; // Espaçamento inferior
+      margin-left: 12px; // Espaçamento à esquerda
+    }
+
+    .newsletter-form {
+      display: flex; // Usa Flexbox para layout do formulário
+      justify-content: center; // Centraliza o campo de e-mail e o botão
+      align-items: center; // Alinha verticalmente o conteúdo
+
+      input {
+        flex: 1; // Permite que o campo de entrada ocupe o espaço disponível
+        padding: 12px; // Espaçamento interno
+        border: 2px solid $footer; // Borda ao redor do campo de entrada
+        margin-right: 10px; // Espaçamento à direita
+        border-radius: 4px; // Bordas arredondadas
+        font-size: 12px; // Tamanho da fonte
+        width: 70%; // Largura do campo de entrada
+        padding-left: 25px; // Espaçamento interno à esquerda
+      }
+
+      button {
+        background-color: $red; // Cor de fundo do botão
+        color: $white; // Cor do texto do botão
+        padding: 12px 25px; // Espaçamento interno (vertical e horizontal)
+        border: none; // Remove a borda padrão
+        border-radius: 5px; // Bordas arredondadas
+        cursor: pointer; // Cursor pointer para indicar interatividade
+        font-weight: bold; // Peso da fonte em negrito
+
+        &:hover {
+          background-color: #f76492; // Muda a cor ao passar o mouse
+        }
+      }
+    }
+  }
+
+  .payment-icons {
+    display: grid; // Usa Grid Layout para disposição dos ícones
+    grid-template-columns: repeat(3, 0.3fr); // Três colunas com tamanho relativo
+    gap: 15px; // Espaçamento entre os ícones
+    align-items: center; // Alinha os ícones verticalmente ao centro
+    
+    img {
+      object-fit: contain; // Evita distorções nas imagens
+    }
+
+    // Classes separadas para cada ícone com tamanhos específicos
+    .visa { width: 48px; height: 16px; }
+    .elo { width: 44px; height: 21px; }
+    .alelo { width: 39px; height: 25px; }
+    .dinners { width: 56px; height: 14px; }
+    .ifood { width: 41px; height: 22px; }
+    .mastercard { width: 37px; height: 29px; }
+    .pix { width: 55px; height: 20px; }
+    .amex { width: 32px; height: 30px; }
+    .ticket { width: 29px; height: 29px; }
+    .sodexo { width: 48px; height: 16px; }
+  }
+
+  &__social {
+    display: flex; // Usa Flexbox para layout dos ícones sociais
+    justify-content: flex-start; // Alinha os ícones à esquerda
+    margin-top: 0; // Remove o espaçamento superior
+    gap: 30px; // Espaçamento entre os ícones
+    position: absolute; // Posiciona os ícones de forma absoluta dentro do rodapé
+    bottom: 80px; // Posiciona os ícones a 80px do fundo
+    left: 20px; // Posiciona os ícones a 20px da borda esquerda
+  }
+
+  &__bottom {
+    position: relative; // Permite posicionar elementos dentro deste container
+    display: flex; // Usa Flexbox para layout dos itens
+    justify-content: space-between; // Espaça os itens igualmente
+    align-items: center; // Alinha verticalmente os itens ao centro
+    border-top: 2px solid rgb(255, 255, 255); // Linha superior para separar do conteúdo acima
+    padding-top: 20px; // Espaçamento interno superior
+    margin-top: 50px; // Espaçamento superior
+  }
+
+  &__branding {
+    display: flex; // Usa Flexbox para layout dos itens
+    align-items: center; // Alinha verticalmente o logotipo ao centro
+
+    img {
+      height: 30px; // Altura do logotipo
+      margin-left: 30px; // Espaçamento à esquerda do logotipo
+    }
+  }
+
+  &__copyright {
+    text-align: left; // Alinha o texto à esquerda
+    font-size: 12px; // Tamanho da fonte
+    line-height: 13px; // Altura da linha para espaçamento vertical
+    font-weight: 400; // Peso da fonte normal
+    opacity: 0.7; // Transparência do texto
+    max-width: 70%; // Largura máxima do texto
+  }
+}
