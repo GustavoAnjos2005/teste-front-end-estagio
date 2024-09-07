@@ -1,6 +1,6 @@
 # Teste Econverse: Vaga Desenvolvedor Front-End Jr
 
-Este projeto foi criado utilizando o [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) e [Sass](https://sass-lang.com/). O objetivo é fornecer uma base para construir aplicações React com um ambiente de desenvolvimento rápido e simples, utilizando a tipagem do TypeScript e o poder do Sass para estilização.
+Este projeto foi criado utilizando o [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) e [Sass](https://sass-lang.com/).
 
 ## Pré-Requisitos
 
@@ -61,4 +61,4 @@ ou
 yarn preview
 ```
 
-Isso é tudo que necessita para rodar e fazer testes no projeto, um grande abraço à todos :)
+Isso é tudo que necessita para rodar e fazer testes no projeto, um grande abraço à todos😁🙏🏻
