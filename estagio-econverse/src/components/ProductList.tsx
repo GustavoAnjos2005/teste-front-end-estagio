@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 // Importando o JSON
-import { fetchProducts } from '../utils/api';
+import { fetchProducts } from '../utils/api.ts';
 
 import '../styles/ProductList.scss';
 import Modal from './Modal';
