@@ -61,4 +61,9 @@ ou
 yarn preview
 ```
 
-Isso é tudo que necessita para rodar e fazer testes no projeto, um grande abraço à todos😁🙏🏻
+## Outro meio de ver o Projeto
+Todos podem acessar o deploy do projeto por este link: https://gustavoanjos2005.github.io/teste-front-end-estagio/
+
+## Agradecimentos e Colaborador
+Isso é tudo que necessita para rodar e fazer testes no projeto, um grande abraço à todos😁🙏🏻 <br/>
+Projeto criado por [Gustavo](https://www.linkedin.com/in/gustavo-anjos-231981239/) com ❤️
