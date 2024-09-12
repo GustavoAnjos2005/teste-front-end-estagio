@@ -1,4 +1,5 @@
 {
+  "homepage": "https://GustavoAnjos2005.github.io/teste-front-end-estagio",
   "name": "estagio-econverse",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +8,9 @@
   "start": "vite",
   "dev": "vite",
   "build": "vite build",
-  "serve": "vite preview"
+  "serve": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
 },
   "dependencies": {
     "react": "^18.3.1",
