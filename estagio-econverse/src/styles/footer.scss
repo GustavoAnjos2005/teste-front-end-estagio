@@ -13,12 +13,24 @@
     margin-left: 30px; // Espaçamento à esquerda
     flex-wrap: wrap; // Permite que os itens se movam para a linha seguinte em telas menores
     gap: 20px; // Espaçamento entre os itens
+
+    // Melhoria: Ajusta o layout para telas menores
+    @media (max-width: 768px) {
+      margin-left: 0; // Remove o espaçamento à esquerda em telas menores
+      justify-content: center; // Centraliza os itens em telas menores
+    }
   }
 
   &__section {
     flex: 1; // Permite que a seção cresça para preencher o espaço disponível
     min-width: 200px; // Largura mínima para a seção
     margin-bottom: 20px; // Espaçamento inferior
+
+    // Melhoria: Ajusta o layout para telas menores
+    @media (max-width: 576px) {
+      min-width: 100%; // Ocupa toda a largura em telas muito pequenas
+      text-align: center; // Centraliza o conteúdo em telas pequenas
+    }
 
     h4 {
       font-size: 13px; // Tamanho da fonte do título
@@ -59,6 +71,12 @@
     justify-content: center; // Centraliza os itens verticalmente
     display: flex; // Usa Flexbox para layout
 
+    // Melhoria: Ajusta o layout para telas menores
+    @media (max-width: 768px) {
+      min-width: 100%; // Ocupa toda a largura em telas menores
+      margin-top: 20px; // Adiciona espaço acima em telas menores
+    }
+
     .title-1 {
       font-size: 18px; // Tamanho da fonte
       color: $text2; // Cor do texto
@@ -68,6 +86,12 @@
 
     .title-1, .title-2 {
       line-height: 0.4; // Garante que não haja espaçamento extra entre as linhas
+
+      // Melhoria: Ajusta o alinhamento para telas menores
+      @media (max-width: 576px) {
+        text-align: center; // Centraliza o texto em telas pequenas
+        line-height: 1.2; // Aumenta o espaçamento entre linhas para melhor legibilidade
+      }
     }
 
     .title-2 {
@@ -77,6 +101,11 @@
       margin-top: 0; // Remove o espaçamento superior
       margin-bottom: 20px; // Espaçamento inferior
       text-align: left; // Alinha o texto à esquerda
+
+      // Melhoria: Ajusta o alinhamento para telas menores
+      @media (max-width: 576px) {
+        text-align: center; // Centraliza o texto em telas pequenas
+      }
     }
     
     p {
@@ -84,12 +113,23 @@
       margin-top: 10px; // Espaçamento superior
       margin-bottom: 50px; // Espaçamento inferior
       margin-left: 12px; // Espaçamento à esquerda
+
+      // Melhoria: Ajusta o layout para telas menores
+      @media (max-width: 576px) {
+        margin-left: 0; // Remove o espaçamento à esquerda em telas pequenas
+        text-align: center; // Centraliza o texto em telas pequenas
+      }
     }
 
     .newsletter-form {
       display: flex; // Usa Flexbox para layout do formulário
       justify-content: center; // Centraliza o campo de e-mail e o botão
       align-items: center; // Alinha verticalmente o conteúdo
+
+      // Melhoria: Ajusta o layout para telas menores
+      @media (max-width: 576px) {
+        flex-direction: column; // Empilha os elementos em telas pequenas
+      }
 
       input {
         flex: 1; // Permite que o campo de entrada ocupe o espaço disponível
@@ -100,6 +140,13 @@
         font-size: 12px; // Tamanho da fonte
         width: 70%; // Largura do campo de entrada
         padding-left: 25px; // Espaçamento interno à esquerda
+
+        // Melhoria: Ajusta o layout para telas menores
+        @media (max-width: 576px) {
+          width: 100%; // Ocupa toda a largura em telas pequenas
+          margin-right: 0; // Remove o espaçamento à direita
+          margin-bottom: 10px; // Adiciona espaço abaixo do input
+        }
       }
 
       button {
@@ -114,6 +161,11 @@
         &:hover {
           background-color: #f76492; // Muda a cor ao passar o mouse
         }
+
+        // Melhoria: Ajusta o layout para telas menores
+        @media (max-width: 576px) {
+          width: 100%; // Ocupa toda a largura em telas pequenas
+        }
       }
     }
   }
@@ -124,6 +176,12 @@
     gap: 15px; // Espaçamento entre os ícones
     align-items: center; // Alinha os ícones verticalmente ao centro
     
+    // Melhoria: Ajusta o layout para telas menores
+    @media (max-width: 576px) {
+      grid-template-columns: repeat(2, 1fr); // Muda para duas colunas em telas pequenas
+      justify-items: center; // Centraliza os ícones horizontalmente
+    }
+
     img {
       object-fit: contain; // Evita distorções nas imagens
     }
@@ -149,6 +207,14 @@
     position: absolute; // Posiciona os ícones de forma absoluta dentro do rodapé
     bottom: 80px; // Posiciona os ícones a 80px do fundo
     left: 20px; // Posiciona os ícones a 20px da borda esquerda
+
+    // Melhoria: Ajusta o posicionamento para telas menores
+    @media (max-width: 768px) {
+      position: static; // Remove o posicionamento absoluto em telas menores
+      justify-content: center; // Centraliza os ícones em telas menores
+      margin-top: 20px; // Adiciona espaço acima dos ícones
+      margin-bottom: 20px; // Adiciona espaço abaixo dos ícones
+    }
   }
 
   &__bottom {
@@ -159,6 +225,12 @@
     border-top: 2px solid rgb(255, 255, 255); // Linha superior para separar do conteúdo acima
     padding-top: 20px; // Espaçamento interno superior
     margin-top: 50px; // Espaçamento superior
+
+    // Melhoria: Ajusta o layout para telas menores
+    @media (max-width: 768px) {
+      flex-direction: column; // Empilha os elementos em telas menores
+      text-align: center; // Centraliza o texto em telas menores
+    }
   }
 
   &__branding {
@@ -168,6 +240,12 @@
     img {
       height: 30px; // Altura do logotipo
       margin-left: 30px; // Espaçamento à esquerda do logotipo
+
+      // Melhoria: Ajusta o espaçamento para telas menores
+      @media (max-width: 768px) {
+        margin-left: 0; // Remove o espaçamento à esquerda em telas menores
+        margin-bottom: 10px; // Adiciona espaço abaixo do logotipo
+      }
     }
   }
 
@@ -178,5 +256,12 @@
     font-weight: 400; // Peso da fonte normal
     opacity: 0.7; // Transparência do texto
     max-width: 70%; // Largura máxima do texto
+
+    // Melhoria: Ajusta o layout para telas menores
+    @media (max-width: 768px) {
+      text-align: center; // Centraliza o texto em telas menores
+      max-width: 100%; // Permite que o texto ocupe toda a largura
+      margin-top: 10px; // Adiciona espaço acima do texto
+    }
   }
 }
