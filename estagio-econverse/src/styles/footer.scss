@@ -244,6 +244,7 @@
       // Melhoria: Ajusta o espaçamento para telas menores
       @media (max-width: 768px) {
         margin-left: 0; // Remove o espaçamento à esquerda em telas menores
+        margin-top: 20px;
         margin-bottom: 10px; // Adiciona espaço abaixo do logotipo
       }
     }

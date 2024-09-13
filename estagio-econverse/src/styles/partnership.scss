@@ -2,25 +2,24 @@
 
 // Mixins para breakpoints responsivos
 @mixin mobile {
-  @media (max-width: 767px) { @content; }
+  @media (max-width: 767px) { @content; } // Define o conteúdo para dispositivos móveis
 }
 
 @mixin tablet {
-  @media (min-width: 768px) and (max-width: 1023px) { @content; }
+  @media (min-width: 768px) and (max-width: 1023px) { @content; } // Define o conteúdo para tablets
 }
 
 .partnership-section {
-  text-align: center;
-  max-width: 1200px;
-  margin: 40px auto;
+  text-align: center; // Centraliza o texto
+  max-width: 1200px; // Define a largura máxima da seção
+  margin: 40px auto; // Adiciona margem vertical de 40px e centraliza horizontalmente
   padding: 0 20px; // Adiciona padding horizontal para evitar que o conteúdo toque as bordas em telas menores
 
   .partnership-title {
-    font-size: 30px;
-    font-weight: bold;
-    color: $red;
-    margin-bottom: 20px;
-    gap: 20px;
+    font-size: 30px; // Define o tamanho da fonte para o título
+    font-weight: bold; // Define o peso da fonte como negrito
+    color: $red; // Define a cor do título
+    margin-bottom: 20px; // Adiciona margem inferior de 20px
 
     @include mobile {
       font-size: 24px; // Reduz o tamanho da fonte em dispositivos móveis
@@ -28,19 +27,19 @@
   }
 
   .see-all {
-    font-size: 15px;
-    color: $text2;
-    cursor: pointer;
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-size: 15px; // Define o tamanho da fonte
+    color: $text2; // Define a cor do texto
+    cursor: pointer; // Aplica o cursor de "mãozinha" ao passar o mouse
+    margin-bottom: 20px; // Adiciona margem inferior
+    font-weight: 700; // Define o peso da fonte
   }
 
   .partnership-container,
   .product-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 70px;
-    margin-bottom: 40px;
+    display: flex; // Aplica layout flexível
+    justify-content: space-between; // Distribui os itens com espaço uniforme
+    gap: 70px; // Define o espaçamento entre os itens
+    margin-bottom: 40px; // Adiciona margem inferior
     flex-wrap: wrap; // Permite que os itens quebrem para a próxima linha em telas menores
 
     @include mobile {
@@ -48,90 +47,109 @@
     }
   }
 
-  .product-container {
-    height: auto; // Remove a altura fixa para permitir flexibilidade em diferentes tamanhos de tela
-  }
-
+  .product-container,
   .partnership-container {
-    height: auto; // Remove a altura fixa para permitir flexibilidade em diferentes tamanhos de tela
+    height: auto; // Remove a altura fixa para permitir flexibilidade
   }
 
   .partnership-item,
   .product-item {
-    position: relative;
-    width: calc(50% - 35px); // Ajusta a largura para considerar o novo gap
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-sizing: border-box;
+    position: relative; // Define a posição relativa para permitir a utilização de elementos absolutos
+    width: calc(50% - 35px); // Define a largura dos itens, levando em conta o espaçamento (gap)
+    border-radius: 10px; // Aplica bordas arredondadas
+    overflow: hidden; // Oculta o conteúdo que exceder os limites do item
+    padding: 0; // Remove o padding interno
+    margin: 0; // Remove a margem externa
+    border: none; // Remove a borda
+    box-sizing: border-box; // Garante que o padding e bordas sejam incluídos nas dimensões do item
 
     @include mobile {
       width: 100%; // Em dispositivos móveis, os itens ocupam a largura total
     }
+
+    @include tablet {
+      width: calc(50% - 15px); // Ajusta a largura para tablets, com um gap menor
+    }
   }
 
   .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-sizing: border-box;
+    width: 100%; // A imagem ocupa toda a largura do container
+    height: 100%; // A altura da imagem é 100% do container
+    object-fit: cover; // A imagem cobre o container mantendo a proporção
+    display: block; // A imagem é exibida como bloco
+    padding: 0; // Remove o padding
+    margin: 0; // Remove a margem
+    border: none; // Remove a borda
+    box-sizing: border-box; // Garante que o padding e bordas sejam incluídos nas dimensões
   }
 
   .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
-    color: $white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 20px;
+    position: absolute; // Define a posição absoluta dentro do container
+    top: 0; // Posiciona o overlay no topo do container
+    left: 0; // Posiciona o overlay na esquerda do container
+    width: 100%; // O overlay ocupa toda a largura do container
+    height: 100%; // O overlay ocupa toda a altura do container
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)); // Aplica um gradiente de cor
+    color: $white; // Define a cor do texto como branco
+    display: flex; // Flexbox para layout interno
+    flex-direction: column; // Alinha o conteúdo verticalmente
+    justify-content: flex-start; // Alinha o conteúdo ao topo
+    align-items: flex-start; // Alinha o conteúdo à esquerda
+    padding: 20px; // Adiciona padding interno
 
     h3 {
-      font-size: 40px;
-      margin-bottom: 10px;
-      margin-top: 70px;
-      margin-left: 20px;
+      font-size: 40px; // Define o tamanho da fonte do título
+      margin-bottom: 10px; // Adiciona margem inferior ao título
+      margin-top: 70px; // Adiciona margem superior ao título
+      margin-left: 20px; // Adiciona margem à esquerda do título
 
       @include mobile {
         font-size: 28px; // Reduz o tamanho da fonte em dispositivos móveis
         margin-top: 30px; // Ajusta a margem superior em dispositivos móveis
       }
+
+      @include tablet {
+        font-size: 32px; // Ajuste de tamanho para tablets
+      }
     }
 
     p {
-      font-size: 16px;
-      margin-bottom: 20px;
-      margin-left: 20px;
-      text-align: left;
+      font-size: 16px; // Define o tamanho da fonte do parágrafo
+      margin-bottom: 20px; // Adiciona margem inferior ao parágrafo
+      margin-left: 20px; // Adiciona margem à esquerda do parágrafo
+      text-align: left; // Alinha o texto à esquerda
 
       @include mobile {
         font-size: 14px; // Reduz o tamanho da fonte em dispositivos móveis
       }
+
+      @include tablet {
+        font-size: 15px; // Ajuste de tamanho para tablets
+      }
     }
 
     .btn-check {
-      background-color: $red;
-      border: none;
-      color: $white;
-      padding: 10px 25px;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-left: 20px;
+      background-color: $red; // Define a cor de fundo do botão
+      border: none; // Remove a borda
+      color: $white; // Define a cor do texto como branco
+      padding: 10px 25px; // Adiciona padding interno ao botão
+      border-radius: 5px; // Aplica bordas arredondadas ao botão
+      font-weight: bold; // Define o peso da fonte como negrito
+      cursor: pointer; // Altera o cursor ao passar o mouse sobre o botão
+      margin-left: 20px; // Adiciona margem à esquerda do botão
 
       &:hover {
-        background-color: #f76492;
+        background-color: #f76492; // Altera a cor de fundo ao passar o mouse
+      }
+
+      @include mobile {
+        padding: 8px 20px; // Reduz o padding em dispositivos móveis
+        margin-top: -20px; // Ajusta a posição vertical do botão em dispositivos móveis
+      }
+
+      @include tablet {
+        padding: 9px 22px; // Ajuste de padding para tablets
+        margin-top: -20px; // Ajusta a posição vertical do botão em tablets
       }
     }
   }

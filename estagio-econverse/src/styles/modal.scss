@@ -1,144 +1,143 @@
-@import './main.scss';
+@import './main.scss'; // Importa o arquivo SCSS principal
 
 .modal-overlay {
-  position: fixed;
+  position: fixed; // Fixa a sobreposição no viewport
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5); // Define a cor de fundo com transparência
+  display: flex; // Usa flexbox para centralizar o conteúdo
+  justify-content: center; // Centraliza horizontalmente
+  align-items: center; // Centraliza verticalmente
+  z-index: 1000; // Garante que a modal fique acima de outros elementos
 }
 
 .modal-container {
-  background: $white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 800px;
-  max-width: 90%;
-  position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 0px;
+  background: $white; // Define o fundo da modal como branco
+  padding: 20px; // Adiciona padding ao redor do conteúdo
+  border-radius: 8px; // Arredonda os cantos da modal
+  width: 800px; // Define a largura da modal
+  max-width: 90%; // Limita a largura em telas menores
+  position: relative; // Define a posição relativa para posicionamento do botão de fechar
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Adiciona sombra à modal
+  border-radius: 0px; // Remove borda arredondada, se necessário
 }
 
 .modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
+  position: absolute; // Posiciona o botão de fechar absolutamente na modal
+  top: 20px; // Distância do topo
+  right: 20px; // Distância da direita
+  background: none; // Remove fundo padrão do botão
+  border: none; // Remove a borda padrão
+  cursor: pointer; // Define o cursor como pointer para indicar que é clicável
+  width: 24px; // Largura do botão
+  height: 24px; // Altura do botão
 
   img {
-    width: 100%;
-    height: auto;
+    width: 100%; // A imagem ocupa toda a largura do botão
+    height: auto; // Mantém a proporção da imagem
   }
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.8; // Reduz a opacidade ao passar o mouse
   }
 }
 
 .modal-content {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  display: flex; // Usa flexbox para organizar o conteúdo
+  justify-content: flex-start; // Alinha o conteúdo no início
+  align-items: flex-start; // Alinha os itens no topo
 
   .product-image {
-    width: 40%;
-    height: 40%;
-    object-fit: cover;
-    border-radius: 8px;
+    width: 40%; // Define a largura da imagem do produto
+    height: 40%; // Define a altura da imagem do produto
+    object-fit: cover; // Faz com que a imagem cubra todo o espaço sem distorção
+    border-radius: 8px; // Arredonda os cantos da imagem
   }
 
   .product-details {
-    width: 50%;
-    padding-left: 40px;
-    text-align: left;
+    width: 50%; // Define a largura dos detalhes do produto
+    padding-left: 40px; // Adiciona espaço à esquerda dos detalhes
+    text-align: left; // Alinha o texto à esquerda
   }
 
   h2 {
-    font-size: 23px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: $text5;
+    font-size: 23px; // Tamanho da fonte do título do produto
+    font-weight: bold; // Deixa o título em negrito
+    margin-bottom: 10px; // Adiciona margem inferior ao título
+    color: $text5; // Define a cor do texto do título
   }
 
   .description {
-    font-size: 14px;
-    color: $text6;
-    margin-bottom: 10px;
+    font-size: 14px; // Tamanho da fonte da descrição do produto
+    color: $text6; // Define a cor da descrição
+    margin-bottom: 10px; // Adiciona margem inferior à descrição
   }
 
   .see-more {
-    color: $text5;
-    cursor: pointer;
-    margin-bottom: 20px;
+    color: $text5; // Define a cor do link "ver mais"
+    cursor: pointer; // Define o cursor como pointer
+    margin-bottom: 20px; // Adiciona margem inferior ao link
   }
 
   .price {
-    font-size: 28px;
-    color: $text5;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 28px; // Tamanho da fonte do preço do produto
+    color: $text5; // Define a cor do texto do preço
+    font-weight: bold; // Deixa o preço em negrito
+    margin-bottom: 20px; // Adiciona margem inferior ao preço
   }
 
   .qty-selector {
-    display: flex;
-    align-items: stretch; // Isso garante que todos os elementos tenham a mesma altura
-    justify-content: flex-start;
-    margin-bottom: 20px;
-    border: 1px solid $text5;
-    border-radius: 4px;
-    overflow: hidden;
-    width: fit-content; // Isso faz com que o container se ajuste ao conteúdo
+    display: flex; // Usa flexbox para organizar o seletor de quantidade
+    align-items: stretch; // Garante que todos os elementos tenham a mesma altura
+    justify-content: flex-start; // Alinha os itens no início
+    margin-bottom: 20px; // Adiciona margem inferior ao seletor de quantidade
+    border: 1px solid $text5; // Define uma borda ao redor do seletor
+    border-radius: 4px; // Arredonda os cantos do seletor
+    overflow: hidden; // Esconde o conteúdo que ultrapassa os limites do seletor
+    width: fit-content; // Faz com que o seletor se ajuste ao conteúdo
 
     button {
-      background-color: $white;
-      border: none;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      border: none;
+      background-color: $white; // Define o fundo dos botões como branco
+      border: none; // Remove a borda dos botões
+      width: 30px; // Define a largura dos botões
+      height: 30px; // Define a altura dos botões
+      display: flex; // Usa flexbox para centralizar o conteúdo dos botões
+      justify-content: center; // Centraliza o conteúdo horizontalmente
+      align-items: center; // Centraliza o conteúdo verticalmente
+      cursor: pointer; // Define o cursor como pointer
+      transition: background-color 0.3s ease; // Adiciona transição suave ao fundo
 
       &:hover {
-        background-color: $gray;
+        background-color: $gray; // Muda o fundo ao passar o mouse
       }
     }
 
     input {
-      width: 50px;
-      height: 30px;
-      text-align: center;
-      border: none;
-      margin: 0 10px;
-      font-size: 16px;
+      width: 50px; // Define a largura do campo de entrada
+      height: 30px; // Define a altura do campo de entrada
+      text-align: center; // Centraliza o texto dentro do campo
+      border: none; // Remove a borda do campo
+      margin: 0 10px; // Adiciona espaçamento horizontal ao campo
+      font-size: 16px; // Define o tamanho da fonte do campo de entrada
     }
   }
 
   .buy-button {
-    background-color: $red;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
+    background-color: $red; // Define a cor de fundo do botão de compra
+    color: white; // Define a cor do texto do botão de compra
+    border: none; // Remove a borda do botão
+    padding: 12px 24px; // Define o padding do botão
+    font-size: 18px; // Define o tamanho da fonte do botão
+    font-weight: bold; // Define a fonte como negrito
+    border-radius: 4px; // Arredonda os cantos do botão
+    cursor: pointer; // Define o cursor como pointer
+    transition: background-color 0.3s ease; // Adiciona transição suave ao fundo
+    width: 100%; // Define a largura do botão como 100%
 
     &:hover {
-      background-color: darken($red, 10%);
+      background-color: darken($red, 10%); // Escurece o fundo ao passar o mouse
     }
   }
 }

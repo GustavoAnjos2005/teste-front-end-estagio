@@ -24,28 +24,49 @@
    }
  
    .header__top-links {
-     display: flex; // Itens em linha
-     justify-content: space-between; // Espaçamento uniforme entre links
-     width: 75%; // Links ocupam 75% da largura disponível
-     
-     a {
-       color: $gray; // Cor do texto dos links
-       text-decoration: none; // Remove o sublinhado dos links
-       font-size: 12px; // Tamanho da fonte
-       display: flex; // Os links são exibidos em linha
-       align-items: center; // Alinhamento vertical
-       gap: 5px; // Espaço entre a imagem e o texto do link
-       
-       .highlight {
-         color: $red; // Cor vermelha para destaque
-         font-weight: bold; // Texto em negrito
-       }
- 
-       img {
-         margin-right: 5px; // Espaçamento entre a imagem e o texto do link
-       }
-     }
-   }
+    display: flex; // Itens em linha
+    justify-content: space-between; // Espaçamento uniforme entre links
+    width: 75%; // Links ocupam 75% da largura disponível
+  
+    // Melhoria: Ajusta o layout para telas menores
+    @media (max-width: 768px) {
+      width: 100%; // Ocupa 100% da largura em telas menores
+      justify-content: center; // Centraliza os links em telas menores
+      flex-wrap: wrap; // Permite que os links se movam para a linha seguinte, se necessário
+    }
+  
+    a {
+      color: $gray; // Cor do texto dos links
+      text-decoration: none; // Remove o sublinhado dos links
+      font-size: 12px; // Tamanho da fonte
+      display: flex; // Os links são exibidos em linha
+      align-items: center; // Alinhamento vertical
+      gap: 5px; // Espaço entre a imagem e o texto do link
+  
+      .highlight {
+        color: $red; // Cor vermelha para destaque
+        font-weight: bold; // Texto em negrito
+      }
+  
+      img {
+        margin-right: 5px; // Espaçamento entre a imagem e o texto do link
+      }
+  
+      // Melhoria: Ajusta o layout para telas menores
+      @media (max-width: 768px) {
+        font-size: 10px; // Reduz o tamanho da fonte em telas menores
+        gap: 3px; // Reduz o espaçamento entre imagem e texto em telas menores
+      }
+  
+      @media (max-width: 576px) {
+        font-size: 9px; // Reduz ainda mais o tamanho da fonte para telas muito pequenas
+        flex-direction: column; // Coloca a imagem acima do texto em telas muito pequenas
+        align-items: center; // Centraliza o conteúdo em telas muito pequenas
+        gap: 2px; // Reduz o espaçamento entre a imagem e o texto
+      }
+    }
+  }
+  
  
    &__main {
      display: flex; // Exibe os elementos principais em linha
