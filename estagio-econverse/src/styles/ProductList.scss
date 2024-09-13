@@ -181,8 +181,11 @@
   z-index: 1;
   background-color: transparent;
   border: none;
-  font-size: 0;
-  line-height: 0;
+  background-repeat: no-repeat; // Não repete a imagem de fundo
+  background-position: center; // Centraliza a imagem de fundo
+  background-size: 100% 100%; // Ajusta a imagem ao tamanho do botão
+  font-size: 0; // Remove o tamanho da fonte (não usa texto)
+  line-height: 0; // Remove a altura da linha (não usa texto)
 
   @media (max-width: 768px) {
     width: 25px;
@@ -192,12 +195,12 @@
 
 .prev-button {
   left: 5px;
-  background-image: url('../assets/5-seta-esquerda.svg');
+  background-image: url('../assets/5-seta-esquerda.svg'); // Seta esquerda corretamente posicionada
 }
 
 .next-button {
   right: 5px;
-  background-image: url('../assets/5-seta-direita.svg');
+  background-image: url('../assets/5-seta-direita.svg'); // Seta direita corretamente posicionada
 }
 
 @media (max-width: 768px) {
