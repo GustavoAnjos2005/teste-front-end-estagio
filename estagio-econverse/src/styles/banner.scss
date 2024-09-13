@@ -1,95 +1,100 @@
 @import './main.scss'; // Importa o arquivo SCSS principal
 
 .banner {
-  background-image: url("../assets/2-FundoOferta.png"); // Define a imagem de fundo do banner
-  background-size: cover; // Garante que a imagem de fundo cubra toda a área
-  background-position: center; // Centraliza a imagem de fundo
-  padding: 60px 20px; // Define o espaçamento interno do banner
-  text-align: left; // Alinha o texto à esquerda
-  height: 348px; // Altura fixa para o banner
-  position: relative; // Define a posição relativa para controle do conteúdo
-  display: flex; // Usa o flexbox para alinhar os itens dentro do banner
-  align-items: center; // Centraliza verticalmente o conteúdo do banner
+  background-image: url("../assets/2-FundoOferta.png");
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  text-align: left;
+  height: 348px;
+  position: relative;
+  display: flex;
+  align-items: center;
   
+  // Gradiente de sobreposição
   &::before {
-    content: ''; // Aplica a sobreposição de gradiente
-    position: absolute; // Posiciona o container
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.7) 80%); 
-    // Gradiente para escurecer o fundo
-    z-index: 1; // Coloca o gradiente atrás do conteúdo principal
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.7) 80%);
+    z-index: 1;
   }
 
   &__content {
-    position: relative; // Define a posição relativa para manter o conteúdo acima do gradiente
-    z-index: 2; // Garante que o conteúdo apareça acima
-    margin-left: 5%; // Margem esquerda para posicionar o conteúdo
+    position: relative;
+    z-index: 2;
+    margin-left: 5%;
+    width: 90%; // Limita a largura do conteúdo para melhor controle em telas menores
+    max-width: 600px; // Máxima largura para manter a legibilidade em telas grandes
   }
 
   &__title {
-    font-size: 3rem; // Tamanho da fonte do título principal
-    margin-bottom: 10px; // Espaçamento inferior para separar do subtítulo
-    color: $white; // Cor branca para o título
-    font-weight: 600; // Negrito para o título
-    text-align: start; // Alinhamento do título à esquerda
-
-    @media (max-width: 1024px) {
-      font-size: 2.5rem; // Reduz o tamanho da fonte em telas menores
-    }
-
-    @media (max-width: 768px) {
-      font-size: 2rem; // Reduz ainda mais o tamanho da fonte em telas bem pequenas
-    }
+    font-size: clamp(2rem, 5vw, 3rem); // Usa clamp para ajuste dinâmico do tamanho da fonte
+    margin-bottom: 10px;
+    color: $white;
+    font-weight: 600;
+    text-align: start;
+    line-height: 1.2; // Melhora o espaçamento entre linhas para melhor leitura
   }
 
   &__subtitle {
-    font-size: 30px; // Tamanho da fonte para o subtítulo
-    margin-bottom: 20px; // Espaço inferior para separar do botão
-    font-weight: 600; // Texto em negrito
-    color: $white; // Cor branca para o subtítulo
-
-    @media (max-width: 1024px) {
-      font-size: 25px; // Ajusta o tamanho do subtítulo em telas menores
-    }
-
-    @media (max-width: 768px) {
-      font-size: 20px; // Reduz o tamanho do subtítulo em telas pequenas
-    }
+    font-size: clamp(1.25rem, 3vw, 1.875rem); // Ajuste dinâmico para o subtítulo
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: $white;
+    line-height: 1.3; // Melhora o espaçamento entre linhas
   }
 
   &__button {
-    padding: 10px 45px; // Espaçamento interno do botão
-    background-color: $red; // Cor de fundo vermelha
-    color: $white; // Cor do texto em branco
-    text-decoration: none; // Remove a sublinha do link
-    border-radius: 5px; // Bordas arredondadas para o botão
-    font-weight: bold; // Texto em negrito
-    transition: background-color 0.3s; // Animação de transição suave ao passar o mouse
-    text-align: center; // Centraliza o texto dentro do botão
-    display: inline-block; // Faz o botão ocupar o espaço necessário sem esticar
-    width: auto; // Ajusta a largura automaticamente de acordo com o conteúdo
+    padding: clamp(8px, 2vw, 10px) clamp(30px, 5vw, 45px); // Ajuste dinâmico do padding
+    background-color: $red;
+    color: $white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s; // Adiciona efeito de transformação
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    font-size: clamp(0.875rem, 2vw, 1rem); // Ajuste dinâmico do tamanho da fonte
 
     &:hover {
-      background-color: darken($red, 10%); // Escurece a cor de fundo ao passar o mouse
-    }
-
-    @media (max-width: 768px) {
-      padding: 8px 30px; // Reduz o espaçamento interno do botão em telas pequenas
+      background-color: darken($red, 10%);
+      transform: scale(1.05); // Efeito de aumento suave ao passar o mouse
     }
   }
 
+  // Media queries para responsividade
   @media (max-width: 1024px) {
-    height: 300px; // Reduz a altura do banner em telas médias
-    padding: 50px 15px; // Ajusta o espaçamento interno em telas médias
+    height: auto; // Altura automática para conteúdo flexível
+    min-height: 300px; // Altura mínima para garantir visibilidade
+    padding: 40px 15px;
   }
 
   @media (max-width: 768px) {
-    height: 250px; // Reduz ainda mais a altura em telas pequenas
-    padding: 40px 10px; // Ajusta o espaçamento interno em telas pequenas
-    text-align: center; // Alinha o texto ao centro em telas pequenas
-    flex-direction: column; // Empilha os elementos verticalmente em telas pequenas
+    text-align: center;
+    padding: 30px 10px;
+
+    &__content {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    &__title, &__subtitle {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    min-height: 250px;
+    padding: 20px 10px;
+
+    &__button {
+      width: 100%; // Botão de largura total em telas muito pequenas
+      max-width: 300px; // Limita a largura máxima do botão
+    }
   }
 }

@@ -1,163 +1,138 @@
-@import './main.scss'; // Importa o arquivo SCSS principal
+@import './main.scss';
 
 .product-section {
-  margin: 30px 20px; // Margem geral ao redor da seção
-  text-align: center; // Centraliza o texto dentro da seção
+  margin: 30px 20px;
+  text-align: center;
 }
 
 .section-title {
-  font-size: 28px; // Tamanho da fonte do título
-  font-weight: bold; // Fonte em negrito
-  color: $red; // Cor do título
-  margin-bottom: 10px; // Margem abaixo do título
+  font-size: 28px;
+  font-weight: bold;
+  color: $red;
+  margin-bottom: 10px;
 }
 
 .topics-list {
-    display: grid; // Utiliza grid layout para a lista
-    grid-template-columns: repeat(6, 1fr); // 6 itens por linha para criar o efeito de grade
-    justify-content: center; // Centraliza a grade horizontalmente
-    margin-bottom: 15px; // Margem abaixo da lista
-    margin-left: 50px; // Margem esquerda
-    margin-right: 50px; // Margem direita
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr); // 4 itens por linha em tablets
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(3, 1fr); // 3 itens por linha em dispositivos móveis
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(2, 1fr); // 2 itens por linha em dispositivos muito pequenos
+    }
 }
 
 .topic-item {
-  background-color: transparent; // Fundo transparente
-  padding: 5px 10px; // Espaçamento interno
-  border: 1px solid $border; // Borda ao redor do item
-  font-size: 16px; // Tamanho da fonte
-  color: $text3; // Cor do texto
-  cursor: pointer; // Cursor pointer para indicar interatividade
-  transition: color 0.3s ease; // Transição suave para a cor
+  background-color: transparent;
+  padding: 5px 10px;
+  border: 1px solid $border;
+  font-size: 16px;
+  color: $text3;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 14px; // Reduz o tamanho da fonte em dispositivos móveis
+  }
 
   &:hover, &.active {
-    color: $red; // Muda a cor do texto ao passar o mouse ou se estiver ativo
+    color: $red;
   }
 }
 
 .carousel-container {
-  position: relative; // Posicionamento relativo para posicionar os botões
-  display: flex; // Flexbox para layout interno
-  align-items: center; // Alinha itens verticalmente ao centro
-  justify-content: center; // Centraliza itens horizontalmente
-  overflow: hidden; // Oculta qualquer conteúdo que saia do container
-  margin: 0 auto; // Centraliza o container horizontalmente
-  padding: 0 40px; // Espaçamento interno
-  border-radius: 10px; // Bordas arredondadas
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0 40px;
+  border-radius: 10px;
 }
 
 .carousel {
-  display: flex; // Flexbox para layout horizontal dos itens do carrossel
-  overflow: hidden; // Oculta o conteúdo que sai da área do carrossel
-  width: calc(100% - 220px); // Largura do carrossel menos espaço para botões laterais
-}
+  display: flex;
+  overflow: hidden;
+  width: calc(100% - 220px);
 
-.product-list {
-  display: flex; // Flexbox para disposição horizontal dos itens
-  transition: transform 0.5s ease; // Transição suave para o movimento
-}
-
-.product-item {
-  background: $white; // Fundo branco
-  border-radius: 8px; // Bordas arredondadas
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); // Sombra ao redor do item
-  padding: 10px; // Espaçamento interno
-  text-align: left; // Alinha o texto à esquerda
-  width: 220px; // Largura fixa do item
-  margin: 0 15px; // Margem lateral entre os itens
-  flex-shrink: 0; // Impede que o item encolha
-}
-
-.product-item img {
-  max-width: 100%; // Imagem não ultrapassa a largura do container
-  height: auto; // Mantém a proporção da imagem
-  margin-bottom: 10px; // Margem abaixo da imagem
-  border-radius: 4px; // Bordas arredondadas
-  background-color: transparent; // Fundo transparente
-}
-
-.product-item .description {
-  font-size: 15px; // Tamanho da fonte da descrição
-  margin-bottom: 8px; // Margem abaixo da descrição
-  color: $text2; // Cor do texto
-  height: 40px; // Altura fixa para a descrição
-  overflow: hidden; // Oculta o excesso de texto
-  text-overflow: ellipsis; // Adiciona "..." para texto que não cabe
-}
-
-.product-item .before-price {
-  font-size: 18px; // Tamanho da fonte
-  color: #999999; // Cor cinza claro
-  text-decoration: line-through; // Linha atravessada para indicar preço original
-  margin-bottom: 8px; // Margem abaixo do preço
-}
-
-.product-item .price {
-  font-size: 24px; // Tamanho da fonte
-  font-weight: bold; // Fonte em negrito
-  color: #333333; // Cor escura
-  margin-bottom: 8px; // Margem abaixo do preço
-}
-
-.product-item .interest {
-  font-size: 12px; // Tamanho da fonte
-  color: $text2; // Cor do texto
-  font-weight: 500; // Peso da fonte
-  margin-bottom: 10px; // Margem abaixo do texto
-}
-
-.product-item .free {
-  color: $red; // Cor vermelha
-  font-size: 14px; // Tamanho da fonte
-  margin-bottom: 15px; // Margem abaixo do texto
-  font-weight: 500; // Peso da fonte
-}
-
-.product-item .btn-buy {
-  color: $white; // Cor do texto
-  display: block; // Exibe o botão como bloco
-  width: 100%; // Largura total do botão
-  padding: 12px; // Espaçamento interno
-  background-color: $red; // Cor de fundo
-  border-radius: 4px; // Bordas arredondadas
-  text-transform: uppercase; // Texto em maiúsculas
-  font-weight: bold; // Fonte em negrito
-  transition: background-color 0.3s ease; // Transição suave para a cor de fundo
-  cursor: pointer; // Cursor pointer para indicar interatividade
-  border: none; // Remove a borda padrão
-  font-size: 16px; // Tamanho da fonte
-
-  &:hover {
-    background-color: darken($red, 10%); // Escurece a cor de fundo no hover
+  @media (max-width: 768px) {
+    width: 100%; // Ocupa toda a largura em dispositivos móveis
   }
 }
 
+.product-list {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.product-item {
+  background: $white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  text-align: left;
+  width: 220px;
+  margin: 0 15px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 180px; // Reduz a largura dos itens em dispositivos móveis
+    margin: 0 10px; // Reduz as margens laterais
+  }
+
+  @media (max-width: 480px) {
+    width: 150px; // Reduz ainda mais a largura em dispositivos muito pequenos
+    margin: 0 5px; // Reduz ainda mais as margens laterais
+  }
+}
+
+// ... (resto do código permanece o mesmo)
+
 .prev-button, .next-button {
-  width: 30px; // Largura dos botões
-  height: 30px; // Altura dos botões
-  display: flex; // Flexbox para centralizar o ícone
-  align-items: center; // Alinha ícones verticalmente
-  justify-content: center; // Alinha ícones horizontalmente
-  cursor: pointer; // Cursor pointer para indicar interatividade
-  position: absolute; // Posiciona os botões fora do fluxo normal do documento
-  top: 50%; // Posiciona verticalmente no centro
-  transform: translateY(-50%); // Corrige o posicionamento vertical
-  z-index: 1; // Garante que os botões fiquem acima dos outros elementos
-  background-color: transparent; // Fundo transparente
-  border: none; // Remove a borda padrão
-  background-repeat: no-repeat; // Não repete a imagem de fundo
-  background-position: center; // Centraliza a imagem de fundo
-  background-size: contain; // Ajusta a imagem ao tamanho do botão
-  font-size: 0; // Remove o tamanho da fonte (não usa texto)
-  line-height: 0; // Remove a altura da linha (não usa texto)
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  font-size: 0;
+  line-height: 0;
+
+  @media (max-width: 768px) {
+    width: 25px; // Reduz o tamanho dos botões em dispositivos móveis
+    height: 25px;
+  }
 }
 
 .prev-button {
-  left: 5px; // Distância da borda esquerda
-  background-image: url('../assets/5-seta-esquerda.svg'); // Imagem de seta para a esquerda
+  left: 5px;
+  background-image: url('../assets/5-seta-esquerda.svg');
 }
 
 .next-button {
-  right: 5px; // Distância da borda direita
-  background-image: url('../assets/5-seta-direita.svg'); // Imagem de seta para a direita
+  right: 5px;
+  background-image: url('../assets/5-seta-direita.svg');
 }

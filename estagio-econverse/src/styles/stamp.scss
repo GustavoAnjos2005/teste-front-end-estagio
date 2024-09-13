@@ -1,78 +1,132 @@
 @import './main.scss'; // Importa o arquivo SCSS principal
 
 .stamp-section {
-  text-align: center; // Centraliza o texto dentro da seção
-  margin: 40px auto; // Margem superior e inferior de 40px, centraliza horizontalmente
+  text-align: center;
+  margin: 40px auto;
+  padding: 0 20px; // Adiciona padding lateral para evitar que o conteúdo encoste nas bordas
 
   .stamp-title {
-    font-size: 30px; // Tamanho da fonte do título
-    color: $red; // Cor do título
-    margin-bottom: 20px; // Margem abaixo do título
-    font-weight: 700; // Peso da fonte em negrito
+    font-size: clamp(1.5rem, 4vw, 1.875rem); // Ajuste dinâmico do tamanho da fonte
+    color: $red;
+    margin-bottom: 20px;
+    font-weight: 700;
   }
 
   .carousel-container {
-    position: relative; // Permite o posicionamento absoluto dos botões dentro deste container
-    display: flex; // Flexbox para layout dos itens do carrossel
-    align-items: center; // Alinha itens verticalmente ao centro
-    justify-content: center; // Centraliza itens horizontalmente
-    overflow: hidden; // Esconde qualquer item fora da área visível
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%; // Garante que o container não ultrapasse a largura da tela
   }
 
   .carousel-button {
-    background: none; // Remove o fundo padrão do botão
-    border: none; // Remove a borda padrão do botão
-    position: absolute; // Posiciona o botão de forma absoluta dentro do container
-    top: 50%; // Posiciona o botão verticalmente no centro
-    transform: translateY(-50%); // Ajusta o botão para centralizar verticalmente
-    cursor: pointer; // Cursor pointer para indicar interatividade
-    z-index: 2; // Garante que os botões fiquem acima dos outros elementos
-    width: 45px; // Largura dos botões
-    height: 30px; // Altura dos botões
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+    width: clamp(30px, 5vw, 45px); // Ajuste dinâmico do tamanho dos botões
+    height: auto; // Altura automática para manter a proporção
 
     img {
-      width: 100%; // Largura total do botão
-      height: 100%; // Altura total do botão
+      width: 100%;
+      height: auto;
     }
 
     &.left {
-      left: 20px; // Distância da borda esquerda
+      left: 10px;
     }
 
     &.right {
-      right: 20px; // Distância da borda direita
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      // Oculta os botões em telas menores para economizar espaço
+      display: none;
     }
   }
 
   .stamp-container {
-    width: calc(100% - 120px); // Largura ajustada para considerar o espaço ocupado pelas setas de navegação
-    overflow: hidden; // Esconde itens fora da área visível
+    width: 100%; // Usa toda a largura disponível
+    overflow: hidden;
+    padding: 0 10px; // Adiciona um pequeno padding para evitar que os itens toquem as bordas
   }
 
   .carousel {
-    display: flex; // Flexbox para disposição horizontal dos itens
-    transition: transform 0.5s ease-in-out; // Suaviza a rolagem entre os itens do carrossel
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    -webkit-overflow-scrolling: touch; // Melhora a rolagem suave em dispositivos iOS
+    scroll-behavior: smooth; // Rolagem suave para navegação por toque
+    
+    @media (max-width: 768px) {
+      overflow-x: auto; // Permite rolagem horizontal em telas menores
+      scroll-snap-type: x mandatory; // Adiciona snap de rolagem para melhor experiência
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
   .stamp-item {
-    flex: 0 0 220px; // Largura fixa dos itens para garantir que sejam inteiros (não encolhem nem se esticam)
-    height: 220px; // Altura fixa dos itens
-    border-radius: 50%; // Bordas arredondadas para criar um formato circular
-    background-color: #fff; // Cor de fundo branca
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave ao redor do item
-    display: flex; // Flexbox para centralizar o conteúdo interno
-    justify-content: center; // Centraliza horizontalmente o conteúdo
-    align-items: center; // Centraliza verticalmente o conteúdo
-    margin-right: 40px; // Espaçamento entre os itens
-    transition: transform 0.3s ease; // Suaviza o efeito de transformação
+    flex: 0 0 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    transition: transform 0.3s ease;
+    scroll-snap-align: center; // Alinha o item ao centro durante a rolagem
 
     img {
-      width: 90%; // Largura da imagem (90% da largura do item)
-      height: auto; // Altura automática para manter a proporção
+      width: 90%;
+      height: auto;
     }
     
     &:hover {
-      transform: scale(1.2); // Aumenta o tamanho do item ao passar o mouse
+      transform: scale(1.1); // Reduz um pouco o aumento para evitar sobreposições em telas menores
+    }
+
+    @media (max-width: 768px) {
+      flex: 0 0 180px; // Reduz o tamanho dos itens em telas menores
+      height: 180px;
+      margin-right: 20px; // Reduz o espaço entre os itens
+    }
+
+    @media (max-width: 480px) {
+      flex: 0 0 150px; // Reduz ainda mais o tamanho em telas muito pequenas
+      height: 150px;
+      margin-right: 15px;
+    }
+  }
+
+  // Adiciona indicadores de navegação para telas menores
+  .carousel-indicators {
+    display: none;
+    justify-content: center;
+    margin-top: 20px;
+
+    @media (max-width: 768px) {
+      display: flex; // Mostra os indicadores apenas em telas menores
+    }
+
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin: 0 5px;
+      cursor: pointer;
+
+      &.active {
+        background-color: $red;
+      }
     }
   }
 }
