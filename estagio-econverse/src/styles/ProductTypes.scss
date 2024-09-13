@@ -4,7 +4,12 @@
   display: flex; // Flexbox para layout flexível
   justify-content: center; // Centraliza itens horizontalmente
   flex-wrap: wrap; // Permite que os itens se movam para a linha seguinte se não houver espaço suficiente
-  margin: 30px 10px; // Margem geral em torno da seção 
+  margin: 30px 10px; // Margem geral em torno da seção
+
+  // Ajuste para alinhamento e responsividade
+  @media (max-width: 768px) {
+    margin: 20px 5px; // Reduz a margem lateral em telas menores
+  }
 
   &__container {
     display: flex; // Flexbox para layout interno
@@ -21,10 +26,14 @@
 
     @media (max-width: 768px) {
       flex-basis: 80px; // Reduz a base do item em telas menores
+      margin-right: 20px; // Ajusta margem lateral para telas menores
+      margin-left: 20px;
     }
 
     @media (max-width: 480px) {
       flex-basis: 70px; // Reduz ainda mais a base do item em telas muito pequenas
+      margin-right: 10px; // Ajusta margem para telas muito pequenas
+      margin-left: 10px;
     }
   }
 
@@ -51,13 +60,13 @@
     }
 
     @media (max-width: 480px) {
-      width: 70px; ///Reduz ainda mais a largura em telas muito pequenas
+      width: 70px; // Reduz ainda mais a largura em telas muito pequenas
       height: 70px; // Reduz ainda mais a altura em telas muito pequenas
     }
   }
 
   &__image-wrapper {
-    width: 50px; // Largura do wrapper da imagem //
+    width: 50px; // Largura do wrapper da imagem
     height: 50px; // Altura do wrapper da imagem
     overflow: hidden; // Oculta partes da imagem que saem do container
 
@@ -72,7 +81,6 @@
     }
   }
 
-
   &__image {
     width: 100%; // A largura da imagem ocupa 100% do wrapper
     height: 100%; // A altura da imagem ocupa 100% do wrapper
@@ -81,11 +89,11 @@
 
   &__label {
     margin-top: 15px; // Margem acima do rótulo
-    font-size: 16px; ///Tamanho da fonte do rótulo
+    font-size: 16px; // Tamanho da fonte do rótulo
     color: $text1; // Cor do texto
     font-weight: 500; // Peso da fonte
     text-align: center; // Centraliza o texto horizontalmente
-    white-space: nowrap; // Impede a quebra de linha no texto 
+    white-space: nowrap; // Impede a quebra de linha no texto
 
     &--active {
       color: $red; // Cor vermelha destacada para o rótulo ativo
