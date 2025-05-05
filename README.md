@@ -1,4 +1,4 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End Jr
+# Teste Econverse: Vaga Desenvolvedor Front-End
 
 Este projeto foi criado utilizando o [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) e [Sass](https://sass-lang.com/).
 
